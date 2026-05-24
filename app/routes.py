@@ -27,3 +27,8 @@ def get_student(student_id):
     if not student:
         return jsonify({"error": "Student not found"}), 404
     return jsonify(student), 200
+
+
+@students_bp.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status": "ok", "version": "1.0.0"}), 200

@@ -66,3 +66,9 @@ def test_get_student_not_found(client):
     response = client.get("/students/00000000-0000-0000-0000-000000000000")
     assert response.status_code == 404
     assert response.get_json() == {"error": "Student not found"}
+
+
+def test_health_check(client):
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.get_json() == {"status": "ok", "version": "1.0.0"}
