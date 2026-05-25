@@ -71,4 +71,6 @@ def test_get_student_not_found(client):
 def test_health_check(client):
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.get_json() == {"status": "ok", "version": "1.0.0"}
+    data = response.get_json()
+    assert data["status"] == "ok"
+    assert data["version"] == "1.1.0"

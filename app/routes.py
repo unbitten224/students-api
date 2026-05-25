@@ -31,4 +31,4 @@ def get_student(student_id):
 
 @students_bp.route("/health", methods=["GET"])
 def health():
-    return jsonify({"status": "ok", "version": "1.0.0"}), 200
+    return jsonify({"status": "ok", "version": "1.1.0"}), 200
